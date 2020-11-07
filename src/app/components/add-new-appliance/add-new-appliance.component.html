@@ -1,0 +1,106 @@
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Serial Number</label>
+            <input type="text" class="form-control" id="product_name" name="serialNo" required
+                [(ngModel)]="appliance.serialNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Product Name</label>
+            <input type="text" class="form-control" id="product_name" name="productName" required
+                [(ngModel)]="appliance.productName">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Product Description</label>
+            <textarea class="form-control" id="product_description" name="productDesc" rows="3" required
+                [(ngModel)]="appliance.productDesc"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="btn btn-default">
+                <input type="file" (change)="selectFile($event)" />
+            </label>
+
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
+                Upload
+            </button>
+
+            <div class="alert alert-light" role="alert">{{ message }}</div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Brand</label>
+            <input type="text" class="form-control" id="brand" name="brand" required [(ngModel)]="appliance.brand">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Model</label>
+            <input type="text" class="form-control" id="model" name="model" required [(ngModel)]="appliance.model">
+        </div>
+
+        <div class="form-group">
+            <label for="status" class="col-sm-2 col-form-label">Status</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="active_status" value="active"
+                        required [(ngModel)]="appliance.status">
+                    <label class="form-check-label" for="exampleRadios1">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="status" id="inactive_status" value="inactive"
+                        required [(ngModel)]="appliance.status">
+                    <label class="form-check-label" for="exampleRadios2">
+                        In-Active
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Date Bought</label>
+            <input type="date" class="form-control" id="dateBought" name="dateBought" required
+                [(ngModel)]="appliance.dateBought" placeholder="dd-mm-yyyy">
+        </div>
+    </form>
+
+    <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+    </div>
+
+
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+    <div *ngIf="appliance.id; then update else save">
+        Leve1
+    </div>
+
+    <ng-template #update>
+        <button type=" button" class="btn btn-primary" (click)="updateAppliance()">Update changes</button>
+    </ng-template>
+
+    <ng-template #save>
+        <div *ngIf="submitted; then addAnother else saveChanges">
+            Level2
+        </div>
+        <ng-template #addAnother>
+            <button type="button" class="btn btn-primary" (click)="saveAppliance()">Add Another</button>
+        </ng-template>
+
+        <ng-template #saveChanges>
+            <button type=" button" class="btn btn-primary" (click)="saveAppliance()">Save changes</button>
+        </ng-template>
+    </ng-template>
+
+
+</div>

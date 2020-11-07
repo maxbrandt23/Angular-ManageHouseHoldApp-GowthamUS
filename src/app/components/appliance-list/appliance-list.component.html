@@ -1,0 +1,32 @@
+<div class="row row-cols-1 row-cols-md-3" style="margin: 0;">
+    <div class="col mb-4" *ngFor="let appliance of listofappliances">
+        <div class="card  h-100">
+            <img src="data:image/png;base64,{{appliance.imageData}}" class="card-img-top" alt="No Image Attached">
+            <div class="card-body">
+                <h5 class="card-title">{{appliance.productName}} - {{appliance.brand}}</h5>
+                <p class="card-text">{{appliance.productDesc}}</p>
+            </div>
+            <div class="card-body">
+                <a href="#" class="card-link" (click)="updateAppliance(appliance.id)" data-toggle="modal"
+                    data-target="#editModal">Update</a>
+                <a href="#" class="card-link" (click)="deleteAppliance(appliance.id)">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Appliance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <app-add-new-appliance [updateData]="editApplianceObj" [newSubmit]="newSubmit"></app-add-new-appliance>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<form>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Serial Number</label>
+                <input type="text" class="form-control" id="filterserialno" [(ngModel)]="filters.filterserialno"
+                    name="filterserialno" placeholder="Filter by Serial Number">
+            </div>
+
+        </li>
+        <li class="list-group-item">
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Brand</label>
+                <input type="text" class="form-control" id="filterbrand" [(ngModel)]="filters.filterbrand"
+                    name="filterbrand" placeholder="Filter by Brand">
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Model</label>
+                <input type="text" class="form-control" id="filtermodel" [(ngModel)]="filters.filtermodel"
+                    name="filtermodel" placeholder="Filter by Model">
+            </div>
+        </li>
+        <li class="list-group-item">
+            <label for="formGroupExampleInput2">Filter by Status</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="filterstatus" [(ngModel)]="filters.filterstatus"
+                    id="filterStatus1" value="all">
+                <label class="form-check-label" for="inlineRadio1">All</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="filterstatus" [(ngModel)]="filters.filterstatus"
+                    id="filterStatus2" value="active">
+                <label class="form-check-label" for="inlineRadio2">Active</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="filterstatus" [(ngModel)]="filters.filterstatus"
+                    id="filterStatus3" value="inactive">
+                <label class="form-check-label" for="inlineRadio3">In-Active</label>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Date Bought</label>
+                <input type="date" class="form-control" id="filterdatebought" [(ngModel)]="filters.filterdatebought"
+                    name="filterdatebought" placeholder="Filter by DateBought">
+            </div>
+        </li>
+        <li class="list-group-item">
+            <table>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary" (click)="filterappliances()">Filter</button>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td>
+                        <button type="submit" class="btn btn-primary" (click)="resetFilter()">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+</form>
