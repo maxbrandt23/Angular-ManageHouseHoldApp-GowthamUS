@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpParams, HttpRequest } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from './../../environments/environment.prod';
 
-const baseUrl = 'https://codeassignment.gowtham.com';
+const baseUrl = environment.SERVER_URL;
 const applianceUrl = baseUrl + "/appliance";
 const fileUrl = baseUrl + "/file";
 
