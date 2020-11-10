@@ -20,6 +20,8 @@
                 [(ngModel)]="appliance.productDesc"></textarea>
         </div>
 
+        <input type="hidden" id="imageId" name="imageId" [(ngModel)]="appliance.imageId" />
+
         <div class="form-group">
             <label class="btn btn-default">
                 <input type="file" (change)="selectFile($event)" />

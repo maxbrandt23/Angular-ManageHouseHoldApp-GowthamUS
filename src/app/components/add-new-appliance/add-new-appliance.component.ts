@@ -60,7 +60,7 @@ export class AddNewApplianceComponent implements OnInit {
         response => {
           this.submitted = true;
           this.resetForm(this.submitted);
-          this.router.navigate(['/appliance']);
+          this.router.navigate(['/']);
         },
         error => {
           console.log(error);
@@ -87,7 +87,7 @@ export class AddNewApplianceComponent implements OnInit {
         response => {
           this.submitted = true;
           this.resetForm(this.submitted);
-          this.router.navigate(['/appliance']);
+          this.router.navigate(['/']);
         },
         error => {
           console.log(error);

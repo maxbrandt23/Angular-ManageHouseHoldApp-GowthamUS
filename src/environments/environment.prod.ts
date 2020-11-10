@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  SERVER_URL: 'https://manageappliances-e52a7.web.app'
+  production: false,
+  SERVER_URL: 'http://localhost:8080'
 };

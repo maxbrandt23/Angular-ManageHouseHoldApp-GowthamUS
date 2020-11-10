@@ -60,6 +60,8 @@ export class ManageapplianceService {
   search(text) {
 
     const data = {
+      id: "0",
+      imageId: "0",
       userId: "1",
       serialNumber: text,
       brand: text,
